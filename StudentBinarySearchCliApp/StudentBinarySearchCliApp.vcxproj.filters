@@ -18,7 +18,7 @@
     <ClCompile Include="StudentBinarySearchCliApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Assignment3.cpp">
+    <ClCompile Include="headp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
