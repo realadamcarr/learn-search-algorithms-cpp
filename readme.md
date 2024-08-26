@@ -12,7 +12,7 @@
 - [ ] [Bubble Sort](QuickSortExample)
 - [ ] Heap Sort
 - [ ] Quick Sort
-- [ ] Binary Search
+- [x] ❓Binary Search
 - [ ] Linear Search
 - [ ] Selection Sort
 - [ ] Radix Sort
