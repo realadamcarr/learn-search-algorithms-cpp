@@ -2,19 +2,68 @@
 //
 
 #include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+template<class T>
+class BubbleSortExample
+{
+public:
+    static void main()
+    {
+        int array[] = {23, 41, 25, 36, 3, 67, 72, 88};
+        int arraySize = sizeof(array) / sizeof(array[0]);
+
+        cout << "Original Array: ";
+        printArray(array, arraySize);
+
+        bubbleSort(array, arraySize);
+
+        cout << "Sorted Array: ";
+        printArray(array, arraySize);
+    }
+
+    template<class T>
+    static void bubbleSort(T array[], int arraySize)
+    {
+        bool isSorted = false;
+        for (int pass = 1; pass <= arraySize - 1 && !isSorted; pass++)
+            isSorted = BubbleUp(array, arraySize, pass);
+    }
+
+    /// <summary>
+    /// Bubble up the largest element to the end of the array
+    /// </summary>
+    /// <param name="n">Size of the array</param>
+
+    template<class T>
+    static bool BubbleUp(T array[], int arraySize, int pass)
+    {
+        bool isSorted = true; // Assume the array is sorted
+        for (int index = 0; index < arraySize - pass; index++)
+        {
+            if (array[index] > array[index + 1])
+            {
+                swap(array[index], array[index + 1]);
+                isSorted = false; // Array is proven to be unsorted
+            }
+        }
+        return isSorted;
+    }
+
+    template<class T>
+    static void printArray(T array[], int arraySize)
+    {
+        for (int index = 0; index < arraySize; index++)
+            cout << array[index] << " ";
+
+        cout << endl;
+    }
+};
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    BubbleSortExample::main();
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
