@@ -1,1 +1,14 @@
-{}
+{
+    "files.associations": {
+        "*.bat": "bat",
+        "*.html": "html",
+        "*.md": "markdown",
+        "*.xml": "xml",
+        "license": "plaintext",
+        "*.json": "json",
+        "algorithm": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp",
+        "utility": "cpp"
+    }
+}

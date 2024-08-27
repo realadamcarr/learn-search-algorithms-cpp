@@ -38,27 +38,20 @@ void Merge(T array[], int leftFirst, int leftLast, int rightFirst, int rightLast
         index++;
     }
 
-    CopyValuesBackToArray_(array, mergedArray, leftFirst, leftLast);
-    CopyValuesBackToArray_(array, mergedArray, rightFirst, rightLast);
+    CopyRemaining(array, mergedArray, leftFirst, leftLast);
+    CopyRemaining(array, mergedArray, rightFirst, rightLast);
+
     for (index = saveFirst; index <= rightLast; index++)
         array[index] = mergedArray[index];
 }
 
-// Let Me think about this
 template <class T>
-void CopyValuesBackToArray(T array[], T mergedArray[], int startIndex, int endIndex)
+void CopyRemaining(T array[], T mergedArray[], int& startIndex, int endIndex, int& targetIndex)
 {
-    for (int index = startIndex; index <= endIndex; index++)
-        array[index] = mergedArray[index];
-}
-template <class T>
-void CopyValuesBackToArray_(T array[], T mergedArray[], int startIndex, int endIndex)
-{
-    int index = startIndex;
     while (startIndex <= endIndex)
     {
-        mergedArray[index] = array[startIndex];
+        mergedArray[targetIndex] = array[startIndex];
         startIndex++;
-        index++;
+        targetIndex++;
     }
 }
